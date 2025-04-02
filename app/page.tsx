@@ -30,7 +30,7 @@ export default function Home() {
                 />
 
                 {/* Mobile Menu Button */}
-                <button 
+                <button
                     className="sm:hidden p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -84,7 +84,7 @@ export default function Home() {
 
             {/* Main Content */}
             <main className="flex mb-7 mt-16 sm:mt-20">
-                <section className="grid grid-cols-1 md:grid-cols-12 gap-5 flex-1 h-full w-full p-4 sm:p-10">
+                <section className="grid grid-cols-1 md:grid-cols-12 gap-5 flex-1 h-120 h-full w-full p-4 sm:p-10">
                     {/* Left Column */}
                     <div className="col-span-1 md:col-span-3 order-1">
                         <div className="relative flex flex-col gap-3 lg:gap-5">
@@ -165,7 +165,7 @@ export default function Home() {
                         </div>
                         <div className="absolute bg-black/5 z-30 backdrop-blur-lg text-accent font-normal text-sm/5 w-3xs bottom-5 right-5">
                             <div className="relative px-4 py-5.5">
-                                <p className="align-middle">Understanding your<br/>mind is the first step to<br/>healing.</p>
+                                <p className="align-middle">Understanding your<br />mind is the first step to<br />healing.</p>
                                 <Image
                                     src="/images/up.svg"
                                     alt="ellipse"
@@ -199,7 +199,7 @@ export default function Home() {
                         }}>
                             <div className="absolute bg-black/5 backdrop-blur-lg text-accent font-normal text-lg/5 pt-5 top-5 left-5 right-5">
                                 <div className="flex flex-row px-4 py-5.5">
-                                    <p className="align-middle">Your Companion for<br/>Mental Well-being</p>
+                                    <p className="align-middle">Your Companion for<br />Mental Well-being</p>
                                     <Image
                                         src="/images/up.svg"
                                         alt="ellipse"
@@ -224,7 +224,7 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-            
+
             {/*  */}
             <div className="relative flex flex-col gap-12 md:gap-24 mb-7">
                 <div className="z-10 absolute -left-10 top-1/12">
@@ -260,7 +260,7 @@ export default function Home() {
                         GET BETTER, FASTER WITH QUALITY MENTAL HEALTH CARE
                     </h1>
                     <span className="text-[#020202] text-sm sm:text-base md:text-lg">
-                        Our providers take a hands-on approach to help you see improvement at every step, 
+                        Our providers take a hands-on approach to help you see improvement at every step,
                         no matter how severe your symptoms. Just come as you are and let us take it from there.
                     </span>
                 </div>
@@ -280,7 +280,7 @@ export default function Home() {
                             Appointments in as little as 2 days
                         </h4>
                         <p className="text-[#5E6883] text-center text-sm sm:text-base">
-                            Receive quick guidance and support by speaking with a 
+                            Receive quick guidance and support by speaking with a
                             licensed professional in a matter of hours.
                         </p>
                     </div>
@@ -298,7 +298,7 @@ export default function Home() {
                             Care for even the most severe cases
                         </h4>
                         <p className="text-[#5E6883] text-center text-sm sm:text-base">
-                            Our specialists are trained to handle complex cases with 
+                            Our specialists are trained to handle complex cases with
                             personalized treatment plans.
                         </p>
                     </div>
@@ -316,35 +316,186 @@ export default function Home() {
                             1:1 support from start to finish
                         </h4>
                         <p className="text-[#5E6883] text-center text-sm sm:text-base">
-                            Dedicated professional support throughout your entire 
+                            Dedicated professional support throughout your entire
                             mental health journey.
                         </p>
                     </div>
                 </div>
             </div>
-            
-            <div className="bg-[#87CEEB]/23">
-                <div className="grid grid-cols-6 mb-7 px-32 py-16 gap-5" style={{
-                    backgroundImage: "url('/images/bg_long.png')",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover"
-                }}>
 
-                    <div className="col-span-2 border-2 border-[#020202]/50 rounded-2xl p-5">
-                        <h1>WE OFFER</h1>
-                        <ul>
-                            <li><b>Psychiatry</b>:- helping minds heal through expert care and support.</li><br/>
-                            <li><b>Therapy</b>:- a safe and supportive space to heal, grow, and gain clarity.</li><br/>
-                            <li><b>Teen Care</b>:- Give your teen a safe space to connect, grow, and get expert support.</li>
+            <div className="bg-[#87CEEB]/23">
+                <div
+                    className="grid grid-cols-1 lg:grid-cols-6 mb-7 px-4 sm:px-8 md:px-16 lg:px-8 py-8 md:py-16 gap-5"
+                    style={{
+                        backgroundImage: "url('/images/bg_long.png')",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundBlendMode: "overlay",
+                        backgroundColor: "rgba(135, 206, 235, 0.23)"
+                    }}
+                >
+                    {/* Services List */}
+                    <div className="col-span-1 lg:col-span-2 border-2 rounded-2xl px-6 sm:px-10 md:px-15 py-5 bg-white/90 backdrop-blur-sm">
+                        <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl text-center text-[#004D4D] mb-5">WE OFFER</h1>
+                        <ul className="list-image-[url('/images/bullet_point.svg')] space-y-3 sm:space-y-4 pl-5">
+                            <li className="text-sm sm:text-base">
+                                <b>Psychiatry</b>: helping minds heal through expert care and support.
+                            </li>
+                            <li className="text-sm sm:text-base">
+                                <b>Therapy</b>: a safe and supportive space to heal, grow, and gain clarity.
+                            </li>
+                            <li className="text-sm sm:text-base">
+                                <b>Teen Care</b>: Give your teen a safe space to connect, grow, and get expert support.
+                            </li>
                         </ul>
                     </div>
-                    <div className="col-span-4">asdad</div>
-                        
 
+                    {/* Video Section - Modified for 3/4 coverage */}
+                    <div className="col-span-1 lg:col-span-4 w-full h-full rounded-2xl overflow-hidden relative group">
+                        <div className="relative pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-black/40 z-10" />
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="absolute top-0 left-0 w-[150%] h-full object-cover rounded-2xl transform -translate-x-1/6"
+                                style={{ minWidth: '133.33%' }}
+                                volume={0.2}
+                            >
+                                <source src="/videos/meditation.mp4" type="video/mp4" />
+                                <source src="/videos/meditation.webm" type="video/webm" />
+                                Your browser does not support the video tag.
+                            </video>
+
+                            {/* Fallback Image with Overlay */}
+                            <Image
+                                src="/images/video-fallback.jpg"
+                                alt="Mental health support"
+                                fill
+                                className="object-cover rounded-2xl"
+                                style={{ display: 'none' }}
+                                onError={(e) => {
+                                    e.target.style.display = 'block';
+                                    e.target.previousSibling.style.display = 'none';
+                                    e.target.nextElementSibling.style.display = 'block'; // Show overlay
+                                }}
+                            />
+
+                            {/* Additional gradient overlay for image fallback */}
+                            <div className="absolute inset-0 black/60 z-10"
+                                style={{ display: 'none' }} />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="relative flex flex-col px-4 md:px-8 mb-7 items-center justify-center text-center gap-4 md:gap-10 min-h-screen">
+                {/* Decorative Flowers - Hidden on mobile */}
+                <div className="hidden md:block z-10 absolute -left-4 md:-left-10 top-1/12">
+                    <Image
+                        src="/images/bg-flower.svg"
+                        alt="Decoration"
+                        width={100}
+                        height={234}
+                        className="w-[75px] md:w-[150px]"
+                        priority
+                    />
+                </div>
+                <div className="hidden md:block z-10 absolute left-[45%] md:left-6/12 top-[30%] md:top-5/12">
+                    <Image
+                        src="/images/bg-flower.svg"
+                        alt="Decoration"
+                        width={40}
+                        height={40}
+                        className="w-[40px] md:w-[64px]"
+                        priority
+                    />
+                </div>
+                <div className="hidden md:block z-10 absolute -right-20 md:-right-30 -top-4 md:-top-2/12">
+                    <Image
+                        src="/images/bg-flower.svg"
+                        alt="Decoration"
+                        width={175}
+                        height={245}
+                        className="w-[150px] md:w-[250px]"
+                        priority
+                    />
+                </div>
+
+                {/* Heading */}
+                <h1 className="font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl px-4 md:px-16 lg:px-32 text-[#004D4D] mb-4 md:mb-8">
+                    DEDICATED VIRTUAL SUPPORT GUIDING YOU EVERY STEP OF THE WAY.
+                </h1>
+
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full px-4 md:px-0">
+                    {/* Laptop Image */}
+                    <div className="w-full h-[300px] md:h-full" style={{
+                        backgroundImage: "url('/images/laptop.png')",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "contain",
+                        minHeight: "300px"
+                    }}></div>
+
+                    {/* Features List */}
+                    <div className="w-full flex flex-col justify-center items-center gap-3 md:gap-5">
+                        <div className="border-l-4 border-[#004D4D]/30 rounded-lg w-full md:w-2/3 p-3 md:p-4 text-left">
+                            <div className="text-base md:text-lg font-medium">1:1 Audio Sessions</div>
+                            <div className="text-xs md:text-sm font-light">Let your provider know how you're feeling, get to know you, and provide 1:1 support.</div>
+                        </div>
+                        <div className="border-l-4 border-[#004D4D] rounded-lg w-full md:w-2/3 p-3 md:p-4 text-left">
+                            <div className="text-base md:text-lg font-medium">Anytime Messaging</div>
+                            <div className="text-xs md:text-sm font-light">Get questions or concerns off your chest between video visits by messaging your provider at any time.</div>
+                        </div>
+                        <div className="border-l-4 border-[#004D4D]/30 rounded-lg w-full md:w-2/3 p-3 md:p-4 text-left">
+                            <div className="text-base md:text-lg font-medium">Proactive Progress Tracking</div>
+                            <div className="text-xs md:text-sm font-light">Let your provider know how you're feeling, get to know you, and provide 1:1 support.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div className="relative grid grid-cols-1 md:grid-cols-2 mb-7 w-full min-h-[300px] md:h-[400px]">
+                {/* Image Column */}
+                <div className="relative h-full w-full">
+                    <Image
+                        alt="Mental health support"
+                        src="/images/yoga2.png"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+
+                {/* Background Image + Text Column */}
+                <div 
+                    className="relative h-full w-full overflow-hidden bg-[#004D4D] text-left"
+                >   
+                    {/* Text Content */}
+                    <div className="relative z-20 h-full flex flex-col justify-center p-6 md:p-12 text-left">
+                        <Image
+                            src="/images/Clusiacae.svg"
+                            alt="ellipse"
+                            width={60}
+                            height={64}
+                            className="object-cover absolute top-0 right-0"
+                            priority
+                        />
+                        <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 md:mb-6">
+                        START YOUR JOURNEY TO HEALING WITH MINDFREE BY YOUR SIDE.
+                        </h1>
+                        <Link
+                            className="w-full sm:w-auto px-4 py-2 text-sm sm:text-base font-medium tracking-wide text-white bg-[#004D4D] hover:bg-[#003C3C] rounded-md"
+                            href="/auth/register"
+                        >Sign Up</Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
