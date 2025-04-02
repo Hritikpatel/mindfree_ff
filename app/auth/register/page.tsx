@@ -1,7 +1,40 @@
 "use client"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 export default function Home() {
+	const router = useRouter();
+	const [formData, setFormData] = useState({
+		full_name: "",
+		email: "",
+		password: "",
+		confirm_password: "",
+	});
 
+	const handleChange = (e) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		if (formData.password !== formData.confirm_password) {
+			alert("Passwords do not match!");
+			return;
+		}
+
+		const response = await fetch("http://127.0.0.1:8000/api/register/", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(formData),
+		});
+
+		const data = await response.json();
+		if (response.ok) {
+			router.push("/dashboard");
+		} else {
+			alert(`Error: ${data.password || "Something went wrong!"}`);
+		}
+	};
 	return (
 		<div className="h-screen w-screen flex text-black ">
 			<div className="w-1/2 h-full relative hidden md:block p-5" style={{
@@ -100,19 +133,21 @@ export default function Home() {
 						<p className="mt-2 text-black font-light">Please enter your details</p>
 					</div>
 
-					<form className="mt-8 space-y-6">
+					<form className="mt-8 space-y-6" onSubmit={handleSubmit}>
 						<div className="space-y-4">
 							<div>
-								<label htmlFor="name" className="block text-sm font-medium text-gray-700 px-2">
-									Fullname
+								<label htmlFor="full_name" className="block text-sm font-medium text-gray-700 px-2">
+									Full Name
 								</label>
 								<input
-									id="name"
-									name="name"
-									type="name"
+									id="full_name"
+									name="full_name"
+									type="text"
 									autoComplete="name"
 									required
 									placeholder="Ram Patel"
+									value={formData.full_name}
+									onChange={handleChange}
 									className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#87CEEB] focus:border-blue-500"
 								/>
 							</div>
@@ -128,55 +163,56 @@ export default function Home() {
 									autoComplete="email"
 									required
 									placeholder="ram@gmail.com"
+									value={formData.email}
+									onChange={handleChange}
 									className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#87CEEB] focus:border-blue-500"
 								/>
 							</div>
 
 							<div>
-								<label htmlFor="password" className="block text-sm font-medium text-gray-700  px-2">
+								<label htmlFor="password" className="block text-sm font-medium text-gray-700 px-2">
 									Password
 								</label>
 								<input
 									id="password"
 									name="password"
 									type="password"
-									autoComplete="current-password"
+									autoComplete="new-password"
 									required
 									placeholder="ram's_secure_password"
+									value={formData.password}
+									onChange={handleChange}
 									className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#87CEEB] focus:border-blue-500"
 								/>
 							</div>
+
 							<div>
-								<label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700  px-2">
+								<label htmlFor="confirm_password" className="block text-sm font-medium text-gray-700 px-2">
 									Confirm Password
 								</label>
 								<input
-									id="password"
-									name="password"
+									id="confirm_password"
+									name="confirm_password"
 									type="password"
-									autoComplete="current-password"
+									autoComplete="new-password"
 									required
 									placeholder="ram's_secure_confirm_password"
+									value={formData.confirm_password}
+									onChange={handleChange}
 									className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#87CEEB] focus:border-blue-500"
 								/>
 							</div>
 						</div>
+
 						<div className="md:flex gap-4">
 							<button
 								type="submit"
-								className="w-1/2 m-auto flex justify-center py-2 px-4 border border-transparent rounded-xl text-15 font-medium text-black bg-[#87CEEB] hover:bg-[#82c6e1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87CEEB]  transition-all hover:scale-98"
+								className="w-1/2 m-auto flex justify-center py-2 px-4 border border-transparent rounded-xl text-15 font-medium text-black bg-[#87CEEB] hover:bg-[#82c6e1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87CEEB] transition-all hover:scale-98"
 							>
-								Register as a therapist
-							</button>
-							<button
-								type="submit"
-								className="w-1/2 m-auto flex justify-center py-2 px-4 border border-transparent rounded-xl text-15 font-medium text-black bg-[#87CEEB] hover:bg-[#82c6e1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87CEEB]  transition-all hover:scale-98"
-							>
-								Register as a user
+								Register
 							</button>
 						</div>
 					</form>
-
 					<p className="mt-8 text-center text-sm text-gray-600">
 						Already have an account?{' '}
 						<a href="/auth/login" className="font-medium text-[#87CEEB] hover:text-blue-500">

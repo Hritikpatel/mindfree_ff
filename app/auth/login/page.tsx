@@ -1,7 +1,37 @@
 "use client"
 import Image from "next/image"
+import { useState } from "react";
+import { useRouter } from "next/navigation"; // Next.js navigation
+
 export default function Home() {
 
+		const router = useRouter();
+		const [formData, setFormData] = useState({ email: "", password: "" });
+	
+		const handleChange = (e) => {
+			setFormData({ ...formData, [e.target.name]: e.target.value });
+		};
+	
+		const handleSubmit = async (e) => {
+			e.preventDefault();
+	
+			const response = await fetch("http://127.0.0.1:8000/api/login/", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				credentials: "include", // Ensures cookies are sent
+				body: JSON.stringify(formData),
+			});
+	
+			const data = await response.json();
+	
+			if (response.ok) {
+				sessionStorage.setItem("user", JSON.stringify(data.user)); // Store user info
+				alert("Login successful!");
+				router.push("/dashboard"); // Redirect to dashboard
+			} else {
+				alert(`Error: ${data.error}`);
+			}
+		};
 	return (
 		<div className="h-screen w-screen flex text-black backdrop:">
 			<div className="w-1/2 h-full relative hidden md:block p-5" style={{
@@ -100,7 +130,7 @@ export default function Home() {
 						<p className="mt-2 text-black font-light">Please sign in to your account</p>
 					</div>
 
-					<form className="mt-8 space-y-6">
+					<form className="mt-8 space-y-6"  onSubmit={handleSubmit}>
 						<div className="space-y-4">
 							<div>
 								<label htmlFor="email" className="block text-sm font-medium text-gray-700 px-2">

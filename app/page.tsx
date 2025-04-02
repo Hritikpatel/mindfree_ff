@@ -1,12 +1,38 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { MoveRight, Menu } from "lucide-react";
+import { MoveRight, Menu, FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Footer content data
+    const companyInfo = {
+        logo: "/clip-path-group.png",
+        tagline:
+            "Empowering individuals on their journey to better mental health through professional support and community connection.",
+    };
+
+    const quickLinks = [
+        { title: "About Us", url: "#" },
+        { title: "Services", url: "#" },
+        { title: "Resources", url: "#" },
+        { title: "Blog", url: "#" },
+    ];
+
+    const contactInfo = {
+        email: "support@mindfree.com",
+        phone: "1-800-MINDFREE",
+    };
+
+    const socialLinks = [
+        { icon: <FacebookIcon size={24} />, url: "#" },
+        { icon: <TwitterIcon size={24} />, url: "#" },
+        { icon: <InstagramIcon size={24} />, url: "#" },
+        { icon: <LinkedinIcon size={24} />, url: "#" },
+    ];
 
     return (
         <div className="h-full w-screen text-black bg-[#F1FFF1] overflow-hidden">
@@ -52,10 +78,16 @@ export default function Home() {
                 <div className="hidden sm:flex items-center gap-2">
                     <div className="w-full flex flex-col sm:flex-row gap-2 text-black">
                         <Button className="w-full sm:w-1/2 px-6 py-5 rounded-4xl border border-transparent text-15 font-medium text-black bg-[#87CEEB] hover:bg-[#82c6e1]">
+                        <Link href={"/auth/register/"}>
                             Sign Up
+                        </Link>
                             <MoveRight className="h-4 w-4 font-bold transition-transform group-hover:translate-x-1" />
                         </Button>
-                        <Button variant="outline" className="w-full sm:w-1/2 px-6 py-5 rounded-4xl border-[#87CEEB] text-[#87CEEB] hover:border-[#82c6e1] hover:text-[#82c6e1]">Log In</Button>
+                        <Button variant="outline" className="w-full sm:w-1/2 px-6 py-5 rounded-4xl border-[#87CEEB] text-[#87CEEB] hover:border-[#82c6e1] hover:text-[#82c6e1]">
+                        <Link href={"/auth/login/"}>
+                            Log In
+                        </Link>
+                        </Button>
                     </div>
                 </div>
             </nav>
@@ -363,7 +395,6 @@ export default function Home() {
                                 playsInline
                                 className="absolute top-0 left-0 w-[150%] h-full object-cover rounded-2xl transform -translate-x-1/6"
                                 style={{ minWidth: '133.33%' }}
-                                volume={0.2}
                             >
                                 <source src="/videos/meditation.mp4" type="video/mp4" />
                                 <source src="/videos/meditation.webm" type="video/webm" />
@@ -377,11 +408,6 @@ export default function Home() {
                                 fill
                                 className="object-cover rounded-2xl"
                                 style={{ display: 'none' }}
-                                onError={(e) => {
-                                    e.target.style.display = 'block';
-                                    e.target.previousSibling.style.display = 'none';
-                                    e.target.nextElementSibling.style.display = 'block'; // Show overlay
-                                }}
                             />
 
                             {/* Additional gradient overlay for image fallback */}
@@ -393,7 +419,7 @@ export default function Home() {
 
             </div>
 
-            <div className="relative flex flex-col px-4 md:px-8 mb-7 items-center justify-center text-center gap-4 md:gap-10 min-h-screen">
+            <div className="relative flex flex-col px-4 md:px-8 items-center justify-center text-center gap-4 md:gap-10 min-h-screen">
                 {/* Decorative Flowers - Hidden on mobile */}
                 <div className="hidden md:block z-10 absolute -left-4 md:-left-10 top-1/12">
                     <Image
@@ -460,42 +486,83 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="relative grid grid-cols-1 md:grid-cols-2 mb-7 w-full min-h-[300px] md:h-[400px]">
-                {/* Image Column */}
-                <div className="relative h-full w-full">
-                    <Image
-                        alt="Mental health support"
-                        src="/images/yoga2.png"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
-
-                {/* Background Image + Text Column */}
-                <div 
+            <div className="relative grid grid-cols-1 md:grid-cols-1 mb-7 w-full min-h-[300px] md:h-[400px]">
+                <div
                     className="relative h-full w-full overflow-hidden bg-[#004D4D] text-left"
-                >   
+                >
                     {/* Text Content */}
-                    <div className="relative z-20 h-full flex flex-col justify-center p-6 md:p-12 text-left">
-                        <Image
-                            src="/images/Clusiacae.svg"
-                            alt="ellipse"
-                            width={60}
-                            height={64}
-                            className="object-cover absolute top-0 right-0"
-                            priority
-                        />
+                    <div className="relative z-20 h-full flex flex-col justify-center p-6 md:p-12 text-center">
                         <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 md:mb-6">
-                        START YOUR JOURNEY TO HEALING WITH MINDFREE BY YOUR SIDE.
+                            START YOUR JOURNEY OF HEALING WITH MINDFREE BY YOUR SIDE.
                         </h1>
-                        <Link
-                            className="w-full sm:w-auto px-4 py-2 text-sm sm:text-base font-medium tracking-wide text-white bg-[#004D4D] hover:bg-[#003C3C] rounded-md"
-                            href="/auth/register"
-                        >Sign Up</Link>
                     </div>
                 </div>
             </div>
+
+            <footer className="bg-[#87ceeb] w-full py-16">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {/* Company Info */}
+                        <div className="flex flex-col space-y-4">
+                            <div className="flex items-center">
+                                <img
+                                    src="/images/logo.svg"
+                                    alt="Company Logo"
+                                    className="w-64"
+                                />
+                            </div>
+                            <p className="text-sm max-w-xs">{companyInfo.tagline}</p>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="flex flex-col space-y-4">
+                            <h3 className="font-medium text-lg">Quick Links</h3>
+                            <nav className="flex flex-col space-y-3">
+                                {quickLinks.map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.url}
+                                        className="text-sm hover:underline"
+                                    >
+                                        {link.title}
+                                    </a>
+                                ))}
+                            </nav>
+                        </div>
+
+                        {/* Contact */}
+                        <div className="flex flex-col space-y-4">
+                            <h3 className="font-medium text-lg">Contact</h3>
+                            <div className="flex flex-col space-y-3">
+                                <div className="flex items-center space-x-2">
+                                    <MailIcon size={18} />
+                                    <span className="text-sm">{contactInfo.email}</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <PhoneIcon size={18} />
+                                    <span className="text-sm">{contactInfo.phone}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Social Links */}
+                        <div className="flex flex-col space-y-4">
+                            <h3 className="font-medium text-lg">Follow Us</h3>
+                            <div className="flex space-x-4">
+                                {socialLinks.map((social, index) => (
+                                    <a
+                                        key={index}
+                                        href={social.url}
+                                        className="hover:opacity-80 transition-opacity"
+                                    >
+                                        {social.icon}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }
