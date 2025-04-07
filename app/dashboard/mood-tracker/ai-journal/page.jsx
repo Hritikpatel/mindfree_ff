@@ -30,30 +30,30 @@ export default function Home() {
 
   // Sample journal entries with realistic mental health-related content
   const initialJournalEntries = [
-    { date: "2023-03-15", title: "Morning Reflection", description: "Felt anxious about work presentation. Practiced deep breathing exercises.", sentiment: "Anxious" },
-    { date: "2023-03-14", title: "Therapy Session", description: "Discussed coping mechanisms for stress management with therapist.", sentiment: "Hopeful" },
-    { date: "2023-03-13", title: "Mindful Walk", description: "Took a 30-minute walk in nature, focused on being present.", sentiment: "Calm" },
-    { date: "2023-03-12", title: "Sleep Struggle", description: "Had trouble falling asleep due to racing thoughts.", sentiment: "Tired" },
-    { date: "2023-03-11", title: "Social Connection", description: "Had lunch with friends, felt supported and understood.", sentiment: "Happy" },
-    { date: "2023-03-10", title: "Meditation Practice", description: "Completed 10-minute guided meditation before bed.", sentiment: "Relaxed" },
-    { date: "2023-03-09", title: "Work Stress", description: "Overwhelmed with deadlines. Need to prioritize tasks.", sentiment: "Stressed" },
-    { date: "2023-03-08", title: "Positive Affirmations", description: "Practiced positive self-talk in the mirror this morning.", sentiment: "Confident" },
-    { date: "2023-03-07", title: "Nutrition Focus", description: "Prepared healthy meals to support mental well-being.", sentiment: "Proud" },
-    { date: "2023-03-06", title: "Creative Outlet", description: "Spent an hour painting, felt therapeutic.", sentiment: "Creative" },
-    { date: "2023-03-05", title: "Unexpected Setback", description: "Laptop crashed while working, lost an hour of progress. Frustrating but reminded myself to save work frequently.", sentiment: "Frustrated" },
-    { date: "2023-03-04", title: "Productivity Win", description: "Finished a long-overdue task at work. Felt accomplished and relieved.", sentiment: "Accomplished" },
-    { date: "2023-03-03", title: "Rainy Day Blues", description: "Stayed indoors all day due to rain. Felt a bit sluggish but enjoyed reading a book.", sentiment: "Melancholy" },
-    { date: "2023-03-02", title: "Gratitude Practice", description: "Wrote down three things I’m grateful for. Helped shift my mindset.", sentiment: "Grateful" },
-    { date: "2023-03-01", title: "Workout Success", description: "Finally got back to the gym after a week off. Felt energized.", sentiment: "Motivated" },
-    { date: "2023-02-28", title: "Overwhelmed", description: "Too many things on my plate today. Need to delegate and take breaks.", sentiment: "Overwhelmed" },
-    { date: "2023-02-27", title: "Family Time", description: "Had a great conversation with my sibling. Felt connected.", sentiment: "Loved" },
-    { date: "2023-02-26", title: "Self-Doubt", description: "Kept questioning my abilities today. Need to remind myself of past successes.", sentiment: "Insecure" },
-    { date: "2023-02-25", title: "Music Therapy", description: "Listened to my favorite playlist and felt instantly uplifted.", sentiment: "Uplifted" },
-    { date: "2023-02-24", title: "Busy Day", description: "Meetings back to back. Felt drained but managed to stay productive.", sentiment: "Exhausted" },
-    { date: "2023-02-23", title: "New Hobby", description: "Started learning to play the guitar. Excited for the journey!", sentiment: "Excited" },
-    { date: "2023-02-22", title: "Technology Break", description: "Avoided social media for a full day. Felt peaceful.", sentiment: "Refreshed" },
-    { date: "2023-02-21", title: "Random Act of Kindness", description: "Helped a stranger carry groceries. Brightened my day.", sentiment: "Compassionate" },
-    { date: "2023-02-20", title: "Challenging Conversation", description: "Had a difficult but necessary talk with a friend. Hopeful for resolution.", sentiment: "Hopeful" }
+    // { date: "2023-03-15", title: "Morning Reflection", description: "Felt anxious about work presentation. Practiced deep breathing exercises.", sentiment: "Anxious" },
+    // { date: "2023-03-14", title: "Therapy Session", description: "Discussed coping mechanisms for stress management with therapist.", sentiment: "Hopeful" },
+    // { date: "2023-03-13", title: "Mindful Walk", description: "Took a 30-minute walk in nature, focused on being present.", sentiment: "Calm" },
+    // { date: "2023-03-12", title: "Sleep Struggle", description: "Had trouble falling asleep due to racing thoughts.", sentiment: "Tired" },
+    // { date: "2023-03-11", title: "Social Connection", description: "Had lunch with friends, felt supported and understood.", sentiment: "Happy" },
+    // { date: "2023-03-10", title: "Meditation Practice", description: "Completed 10-minute guided meditation before bed.", sentiment: "Relaxed" },
+    // { date: "2023-03-09", title: "Work Stress", description: "Overwhelmed with deadlines. Need to prioritize tasks.", sentiment: "Stressed" },
+    // { date: "2023-03-08", title: "Positive Affirmations", description: "Practiced positive self-talk in the mirror this morning.", sentiment: "Confident" },
+    // { date: "2023-03-07", title: "Nutrition Focus", description: "Prepared healthy meals to support mental well-being.", sentiment: "Proud" },
+    // { date: "2023-03-06", title: "Creative Outlet", description: "Spent an hour painting, felt therapeutic.", sentiment: "Creative" },
+    // { date: "2023-03-05", title: "Unexpected Setback", description: "Laptop crashed while working, lost an hour of progress. Frustrating but reminded myself to save work frequently.", sentiment: "Frustrated" },
+    // { date: "2023-03-04", title: "Productivity Win", description: "Finished a long-overdue task at work. Felt accomplished and relieved.", sentiment: "Accomplished" },
+    // { date: "2023-03-03", title: "Rainy Day Blues", description: "Stayed indoors all day due to rain. Felt a bit sluggish but enjoyed reading a book.", sentiment: "Melancholy" },
+    // { date: "2023-03-02", title: "Gratitude Practice", description: "Wrote down three things I’m grateful for. Helped shift my mindset.", sentiment: "Grateful" },
+    // { date: "2023-03-01", title: "Workout Success", description: "Finally got back to the gym after a week off. Felt energized.", sentiment: "Motivated" },
+    // { date: "2023-02-28", title: "Overwhelmed", description: "Too many things on my plate today. Need to delegate and take breaks.", sentiment: "Overwhelmed" },
+    // { date: "2023-02-27", title: "Family Time", description: "Had a great conversation with my sibling. Felt connected.", sentiment: "Loved" },
+    // { date: "2023-02-26", title: "Self-Doubt", description: "Kept questioning my abilities today. Need to remind myself of past successes.", sentiment: "Insecure" },
+    // { date: "2023-02-25", title: "Music Therapy", description: "Listened to my favorite playlist and felt instantly uplifted.", sentiment: "Uplifted" },
+    // { date: "2023-02-24", title: "Busy Day", description: "Meetings back to back. Felt drained but managed to stay productive.", sentiment: "Exhausted" },
+    // { date: "2023-02-23", title: "New Hobby", description: "Started learning to play the guitar. Excited for the journey!", sentiment: "Excited" },
+    // { date: "2023-02-22", title: "Technology Break", description: "Avoided social media for a full day. Felt peaceful.", sentiment: "Refreshed" },
+    // { date: "2023-02-21", title: "Random Act of Kindness", description: "Helped a stranger carry groceries. Brightened my day.", sentiment: "Compassionate" },
+    // { date: "2023-02-20", title: "Challenging Conversation", description: "Had a difficult but necessary talk with a friend. Hopeful for resolution.", sentiment: "Hopeful" }
   ];
 
   const [journalEntries, setJournalEntries] = useState(initialJournalEntries);
@@ -127,11 +127,11 @@ export default function Home() {
             <div className="mb-6">
               <h2 className="text-lg font-medium px-2 mb-2 text-[#343c6a]">Main</h2>
               <div className="space-y-2">
-                <Link href={"#"} className="w-full flex items-center gap-3 px-4 py-3 bg-[#008080] text-white rounded-md">
+                <Link href={"/dashboard/mood-tracker/ai-journal"} className="w-full flex items-center gap-3 px-4 py-3 bg-[#008080] text-white rounded-md">
                   <SmilePlus className="h-5 w-5" />
                   <span>Mood Tracker</span>
                 </Link>
-                <Link href={"#"} className="w-full flex items-center gap-3 px-4 py-3 bg-[#008080]/10 text-black rounded-md">
+                <Link href={"/dashboard/therapy/maa-2.0"} className="w-full flex items-center gap-3 px-4 py-3 bg-[#008080]/10 text-black rounded-md">
                   <User className="h-5 w-5" />
                   <span>Therapy</span>
                 </Link>
@@ -141,7 +141,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
+{/* 
             <div>
               <h2 className="text-lg font-medium px-2 mb-2 text-[#343c6a]">Others</h2>
               <div className="space-y-2">
@@ -149,9 +149,8 @@ export default function Home() {
                   <Settings className="h-5 w-5" />
                   <span>Settings</span>
                 </Link>
-                
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="p-4 mb-6">

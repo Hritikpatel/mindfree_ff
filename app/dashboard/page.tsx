@@ -11,41 +11,41 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const router = useRouter();
-	const [user, setUser] = useState(null);
-	const [data, setData] = useState(null);
+  // const router = useRouter();
+	// const [user, setUser] = useState(null);
+	// const [data, setData] = useState(null);
 
-	useEffect(() => {
-		// Retrieve user info from sessionStorage
-		const storedUser = sessionStorage.getItem("user");
-		if (!storedUser) {
-			router.push("/auth/login"); // Redirect if not logged in
-			return;
-		}
+	// useEffect(() => {
+	// 	// Retrieve user info from sessionStorage
+	// 	const storedUser = sessionStorage.getItem("user");
+	// 	if (!storedUser) {
+	// 		router.push("/auth/login"); // Redirect if not logged in
+	// 		return;
+	// 	}
 
-		setUser(JSON.parse(storedUser));
+	// 	setUser(JSON.parse(storedUser));
 
-		// Fetch protected data
-		fetch("http://127.0.0.1:8000/api/protected-endpoint/", {
-			method: "GET",
-			credentials: "include", // Ensures cookies are sent
-		})
-			.then((res) => {
-				if (res.status === 401) {
-					sessionStorage.clear();
-					router.push("/auth/login"); // Redirect on unauthorized
-				}
-				return res.json();
-			})
-			.then((data) => setData(data))
-			.catch((err) => console.error(err));
-	}, []);
+	// 	// Fetch protected data
+	// 	fetch("http://127.0.0.1:8000/api/protected-endpoint/", {
+	// 		method: "GET",
+	// 		credentials: "include", // Ensures cookies are sent
+	// 	})
+	// 		.then((res) => {
+	// 			if (res.status === 401) {
+	// 				sessionStorage.clear();
+	// 				router.push("/auth/login"); // Redirect on unauthorized
+	// 			}
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => setData(data))
+	// 		.catch((err) => console.error(err));
+	// }, []);
 
   return (
     <div className="flex h-screen bg-[#f1fff1] text-black">
